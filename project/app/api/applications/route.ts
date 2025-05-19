@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const supabase = createRouteHandlerClient({ cookies });
-    
+
     const { data: applications, error } = await supabase
       .from('job_applications')
       .select('*')
@@ -15,7 +15,7 @@ export async function GET() {
 
     return NextResponse.json(applications);
   } catch (error) {
-   
+
   }
 }
 
