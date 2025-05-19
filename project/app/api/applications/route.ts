@@ -15,7 +15,7 @@ export async function GET() {
 
     return NextResponse.json(applications);
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+   
   }
 }
 
@@ -34,6 +34,6 @@ export async function POST(request: Request) {
 
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }
 }
